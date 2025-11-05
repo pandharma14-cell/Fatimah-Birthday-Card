@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun!</title>
+    <style>
+        /* CSS untuk Tampilan */
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Lato:wght@300;400&display=swap');
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            /* Animasi masuk */
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #d6336c;
+            font-size: 2.5em; /* 40px jika font dasar 16px */
+            margin-bottom: 10px;
+        }
+
+        .ucapan {
+            font-size: 1.1em; /* 17.6px */
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .tombol-pesan {
+            background-color: #d6336c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1em; /* 16px */
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .tombol-pesan:hover {
+            background-color: #c2255c;
+            transform: scale(1.05);
+        }
+
+        /* Konten tersembunyi */
+        #pesan-khusus {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background: #fdf2f6;
+            border-left: 5px solid #d6336c;
+            text-align: left;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #pesan-khusus.terlihat {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Selamat Ulang Tahun, [Nama Panggilannya]!</h1>
+        
+        <p class="ucapan">
+            [Tulis ucapan singkat Anda di sini. Contoh: Semoga hari ini membawamu kebahagiaan sebanyak kamu memberikannya padaku.]
+        </p>
+
+        <button id="tombol" class="tombol-pesan" onclick="tampilkanPesan()">
+            Ada Sesuatu Untukmu...
+        </button>
+
+        <div id="pesan-khusus">
+            <p><strong>[Tulis sub-judul pesan, misal: Pesan Pribadi dariku]</strong></p>
+            <p>
+                [Tulis pesan Anda yang lebih panjang dan pribadi di sini...]
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript untuk Interaktivitas
+        function tampilkanPesan() {
+            var pesan = document.getElementById('pesan-khusus');
+            var tombol = document.getElementById('tombol');
+            
+            // Menampilkan pesan
+            pesan.classList.add('terlihat');
+            
+            // Menyembunyikan tombol setelah diklik
+            tombol.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
